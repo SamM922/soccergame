@@ -1,5 +1,7 @@
 //Precode
 /*global $*/
+$("button").hide();
+$("#start").show();
 function r3070(){
     let i = (Math.random());
     console.log(i);
@@ -65,7 +67,9 @@ function randStart(){
 }
 //end Precode
 //start functions
-
+function hideStart(){
+    $("#start").hide();
+}
 //end functions
 //start .clicks
 $("#start").click(function(){
@@ -75,5 +79,6 @@ $("#start").click(function(){
     } else {
         
     }
+    hideStart();
 });
 //end .clicks
