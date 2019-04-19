@@ -1,84 +1,29 @@
-//Precode
 /*global $*/
-$("button").hide();
-$("#start").show();
-function r3070(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.3) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function r4060(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.4) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function r5050(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.5) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function r6040(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.6) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function r7030(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.7) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function r8020(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.8) {
-        return true;
-    } else {
-        return false;
-    }
-}
-function randStart(){
-    let i = (Math.random());
-    console.log(i);
-    if (i <= 0.5) {
-        return "defense";
-    } else {
-        return "attack";
-    }
-}
-//end Precode
-//start functions
-function hideStart(){
-    $("#start").hide();
-}
-//end functions
-//start .clicks
-$("#start").click(function(){
-    let r = randStart();
-    if(r === "attack"){
-        
-    } else {
-        
-    }
-    hideStart();
+let match1home;
+let match1away;
+let match2home;
+let match2away;
+$.ajax({
+  headers: { 'X-Auth-Token': 'be21abd9a7c24d45ae61d1460a6bdfc8' },
+  url: "https://api.football-data.org/v2/competitions/CL/matches?stage=SEMI_FINALS",
+  dataType: 'json',
+  type: 'GET',
+}).done(function(response) {
+    match1home = response.matches[0].homeTeam.name;
+    match1away = response.matches[0].awayTeam.name;
+    match2home = response.matches[1].homeTeam.name;
+    match2away = response.matches[1].awayTeam.name;
+    console.log(response.matches[0]);
 });
-//end .clicks
+$("#match1home").click(function(){
+    $("#result").html(match1home);
+});
+$("#match1away").click(function(){
+    $("#result").html(match1away);
+});
+$("#match2home").click(function(){
+    $("#result").html(match2home);
+});
+$("#match2away").click(function(){
+    $("#result").html(match2away);
+});
