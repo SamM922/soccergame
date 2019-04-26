@@ -3,10 +3,23 @@ button {
     font-size: 20px;
     cursor: pointer;
     margin: 20px;
+    background: linear-gradient(0deg, white, lightgray, gray);
+    font-family: 'Lato', sans-serif;
 }
 p {
     font-size: 20px;
 }
 div {
     font-size: 20px;
+}
+img {
+    width: 30%;
+    height: 30%;
+}
+#result {
+    font-size: 50px;
+}
+html {
+    background-color: lightgreen;
+    font-family: 'Open Sans', sans-serif;
 }
